@@ -1,0 +1,7 @@
+beautifulsoup4==4.12.3 
+requests==2.32.3 
+regex==2024.7.24 
+mplsoccer==1.4.0 
+cmasher==1.8.0
+chromedriver-py==129.0.6668.70
+selenium==4.25.0 
