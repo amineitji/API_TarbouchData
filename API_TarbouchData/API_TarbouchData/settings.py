@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'football_data_scraping'
+    'football_data_scraping',
+    'restframework'
 ]
 
 MIDDLEWARE = [
