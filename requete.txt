@@ -1,0 +1,31 @@
+const matchUrl = "https://www.whoscored.com/matches/1821152/live/england-premier-league-2024-2025-chelsea-leicester";
+const playerName = "Moisés Caicedo";
+
+// Préparer les données à envoyer dans le corps de la requête
+const requestData = {
+    html_path: matchUrl,
+    player_name: playerName
+};
+
+// Vérifier ce que nous envoyons
+console.log("Données envoyées :", requestData);
+
+fetch('https://api-tarbouchdata.onrender.com/whoscored_data/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',  // Indique que les données envoyées sont en JSON
+    },
+    body: JSON.stringify(requestData)  // Convertir les données en chaîne JSON
+})
+.then(response => response.blob())  // Recevoir le fichier en tant que blob
+.then(blob => {
+    // Créer un objet URL pour le téléchargement
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'match_data.json';  // Nom du fichier téléchargé
+    document.body.appendChild(a);
+    a.click();  // Simuler un clic pour déclencher le téléchargement
+})
+.catch(error => console.error("Erreur :", error));
+
