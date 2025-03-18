@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-_0rmh12(&@#)7s6t$zy*94n!f@423f#f(8^k0o@nzdy&=$uphj
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = ["*"]  # Pas sécurisé, à limiter si besoin
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = "FALSE"
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = 'static/'
+STATIC_ROOT = BASE_DIR / 'API_TarbouchData'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
